@@ -3,6 +3,9 @@
 ## Using multiple Realsense cameras
 * <a href="multiple_realsense_cameras.py">multiple_realsense_cameras.py</a>
 
+Little work was needed to operate the cameras.
+A little more, to display the results in one image.
+
 The image shows example result for T265 and D415.
 <img src="./T265+D415.png">
 
