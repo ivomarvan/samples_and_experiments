@@ -177,7 +177,7 @@ class TTFontSource:
             sys.stderr.write(f'{cls.__class__.__name__}: {e}, url="{url}"\n')
             content = None
         with open(cache_path, 'wb') as f:
-            return f.write(content)
+            f.write(content)
         return io.BytesIO(content)
 
     @classmethod
