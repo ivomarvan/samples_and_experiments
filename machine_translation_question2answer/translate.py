@@ -54,7 +54,7 @@ def decompose_php_source(source: str) -> (re.match, dict, str):
     for line_match in ARRAY_LINE_RE.finditer(rest):
         if line_match:
             lines[line_match.group('key')] = (line_match.group('orig'), line_match.group('comment'))
-    tail = rest[line_match.endpos:]
+    tail = ');'
     return header_match, lines, tail
 
 def compose_php_source(header_match: re.match, translated_lines: dict, tail: str, lang: str) -> str:
@@ -97,10 +97,10 @@ def translate_sentence(original:str, lang: str)-> str:
         return ret_str
 
 def translate_part(original: str, lang: str, translator = ts.google) -> str:
-    # @todo CACHE TRANSLATION
+    # @todo CACHE TRANSLATIONS
     if original=='':
         return original
-    sleep(0.2)
+    sleep(0.01)
     return translator(original, from_language='en', to_language=lang)
 
 def translate(lines: dict, lang: str) -> str:
